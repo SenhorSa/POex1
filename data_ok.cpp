@@ -1,5 +1,6 @@
 #include "data_ok.h"
 #include <iostream>
+using namespace std;
 Data_ok::~Data_ok()
 {
 	//destrutor
@@ -35,4 +36,8 @@ int Data_ok::getMes() const
 int Data_ok::getAno() const
 {
 	return ano;
+}
+void Data_ok::showData() const
+{
+	cout << getDia() << "/" << getMes() << "/" << getAno() << endl;
 }
