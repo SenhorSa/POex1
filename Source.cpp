@@ -11,4 +11,6 @@ int main(){
 	cout << Nuno.getDia() << "/" << Nuno.getMes() << "/" << Nuno.getAno() << endl;
 	//primeiro metodo é o construtor
 	cout << Jota.getDia() << "/" << Jota.getMes() << "/" << Jota.getAno() << endl;
+	Nuno.showData();
+	Jota.showData();
 }

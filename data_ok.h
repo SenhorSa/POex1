@@ -24,6 +24,8 @@ private:
         int getDia() const;
         int getMes() const;
         int getAno() const;
+
+        void showData() const;
 };
 
 
