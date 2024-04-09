@@ -1,5 +1,6 @@
 #include "data_ok.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 Data_ok::~Data_ok()
 {
@@ -41,3 +42,21 @@ void Data_ok::showData() const
 {
 	cout << getDia() << "/" << getMes() << "/" << getAno() << endl;
 }
+void Data_ok::update(int d, int m, int a)
+{
+	setDia(d);
+	setMes(m);
+	setAno(a);
+}
+//metodo que compare o dia de dois objetos da classe Data_ok
+bool Data_ok::igual(const Data_ok data) const
+{
+	if (data.ano != ano || data.mes != mes || data.dia != dia) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+

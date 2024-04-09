@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 class Data_ok
 {//construtor
 private:
@@ -26,6 +30,10 @@ private:
         int getAno() const;
 
         void showData() const;
+
+        void update(int d, int m, int a);
+        
+        bool igual(const Data_ok data) const;
 };
 
 
