@@ -13,9 +13,15 @@ int main(){
 	Jota.update(6,1,2005);
 	Jota.showData();
 	if (Nuno.igual(Jota)) {
-		printf("sao iguais");
+		printf("sao iguais\n");
 	}
 	else {
-		printf("nao sao");
+		printf("nao sao\n");
 	}
+	if (Nuno == Jota)
+	{
+		printf("hehehiha");
+	}
+	else { printf("nuhuhuh"); }
+
 }

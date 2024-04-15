@@ -58,5 +58,14 @@ bool Data_ok::igual(const Data_ok data) const
 		return true;
 	}
 }
+bool Data_ok::operator==(const Data_ok data)const
+{
+	if (data.ano != ano || data.mes != mes || data.dia != dia) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 class Data_ok
-{//construtor
+{
 private:
 	int dia;
 	int mes;
@@ -34,6 +34,8 @@ private:
         void update(int d, int m, int a);
         
         bool igual(const Data_ok data) const;
+
+        bool operator==(const Data_ok data) const;
 };
 
 
