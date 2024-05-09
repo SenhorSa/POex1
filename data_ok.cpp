@@ -4,6 +4,7 @@
 using namespace std;
 Data_ok::~Data_ok()
 {
+	//cout << "destruido" << endl;
 	//destrutor
 }
 Data_ok::Data_ok():dia(0),mes(0),ano(0)
@@ -26,15 +27,15 @@ void Data_ok::setAno(int a)
 {
 	ano = a;
 }
-int Data_ok::getDia() const
+inline int Data_ok::getDia() const
 {
 	return dia;
 }
-int Data_ok::getMes() const
+inline int Data_ok::getMes() const
 {
 	return mes;
 }
-int Data_ok::getAno() const
+inline int Data_ok::getAno() const
 {
 	return ano;
 }
@@ -60,12 +61,48 @@ bool Data_ok::igual(const Data_ok data) const
 }
 bool Data_ok::operator==(const Data_ok data)const
 {
+	return this->igual(data);
+}
+Data_ok Data_ok::operator+(const Data_ok data) const {
+	Data_ok aux;
+	aux.ano = this->getAno() + data.getAno();
+	aux.mes = this->getMes() + data.getMes();
+	aux.dia = this->getDia() + data.getDia();
+	return aux;
+}
+Data_ok Data_ok::operator-(const Data_ok data) const {
+	Data_ok aux;
+	aux.ano = this->getAno() - data.getAno();
+	aux.mes = this->getMes() - data.getMes();
+	aux.dia = this->getDia() - data.getDia();
+	return aux;
+}
+bool Data_ok::operator!=(const Data_ok data) const
+{
 	if (data.ano != ano || data.mes != mes || data.dia != dia) {
-		return false;
-	}
-	else {
 		return true;
 	}
+	else {
+		return false;
+	}
+}
+ostream& operator << (ostream& os, const Data_ok data) {
+	os << "Data:" << data.getDia() << "/" << data.getMes() << "/" << data.getAno() << ";";
+		
+	return os;
+}
+
+istream& operator >> (istream& is, Data_ok& data) {
+	//métodos friend têm acesso direto aos membros da classe
+
+	cout << "Dia: ";
+	is >> data.dia;		//acesso direto		
+	cout << "Mes: ";
+	is >> data.mes;		//acesso direto
+	cout << "Ano: ";
+	is >> data.ano;		//acesso direto
+
+	return is;
 }
 
 

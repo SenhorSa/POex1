@@ -1,5 +1,6 @@
 #include <iostream>
 #include "data_ok.h"
+#include "person.h"
 using namespace std;
 //instanciar(criar) um objeto da classe data_ok
 int main(){   
@@ -13,15 +14,24 @@ int main(){
 	Jota.update(6,1,2005);
 	Jota.showData();
 	if (Nuno.igual(Jota)) {
-		printf("sao iguais\n");
+		/*printf("sao iguais\n");*/
+		cout << "sao iguais" << endl;
 	}
 	else {
-		printf("nao sao\n");
+		/*printf("nao sao\n");*/
+		cout << "nao sao" << endl;
 	}
 	if (Nuno == Jota)
 	{
-		printf("hehehiha");
+		cout<<"hehehiha"<<endl;
 	}
-	else { printf("nuhuhuh"); }
-
+	else { cout<<"nuhuhuh"<<endl; }
+	Data_ok soma = Nuno + Jota;
+	soma.showData();
+	if (Nuno != soma) {
+		cout << "sao diferentes" << endl;
+	}
+	else {
+		cout << "SAO IGUAIS" << endl;
+	}
 }
