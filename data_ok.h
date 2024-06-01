@@ -41,6 +41,8 @@ private:
         Data_ok operator-(const Data_ok data) const;	//	sobrecarga de operadores
         friend ostream& operator << (ostream& os, const Data_ok data);//	sobrecarga de operadores
         friend istream& operator >> (istream& is, Data_ok& data);		//	sobrecarga de operadores
+        void saveFile(ofstream& os) const;
+        void readFile(ifstream& is);
 };
 
 

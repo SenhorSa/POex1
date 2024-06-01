@@ -104,5 +104,21 @@ istream& operator >> (istream& is, Data_ok& data) {
 
 	return is;
 }
+void Data_ok::saveFile(ofstream& os) const {
+	os << "Data:" <<  getDia() << "/" << getMes() << "/" << getAno() << ";";
+}
+
+void Data_ok::readFile(ifstream& is) {
+	char aux[10];
+
+	is.getline(aux, sizeof(aux), ':');	// lê até ':' e remove ':'
+
+	is.getline(aux, sizeof(aux), '/');	// lê até '/' e remove '/'
+	this->dia = atoi(aux);				//string para inteiro
+	is.getline(aux, sizeof(aux), '/');	// lê até '/' e remove '/'
+	this->mes = atoi(aux);				//string para inteiro
+	is.getline(aux, sizeof(aux), ';');	// lê até ';' e remove ';'
+	this->ano = atoi(aux);				//string para inteiro
+}
 
 

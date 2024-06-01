@@ -34,4 +34,30 @@ int main(){
 	else {
 		cout << "SAO IGUAIS" << endl;
 	}
+	ofstream os;
+	ifstream is;
+	Data_ok bola(4,2,1234);	
+	Data_ok bolas;
+	/*os.open("datas.txt");
+	if (!os) {
+		cout << "no open" << endl;
+		exit(1);
+	}
+	bola.saveFile(os);
+	os.close();
+	cout << endl << " 'dc' salvo no ficheiro" << endl;
+
+
+	is.open("datas.txt");
+	if (!is) {
+		cout << "ERRO: não é possível abrir o ficheiro datas.txt" << endl;
+		exit(1);
+	}
+	bolas.readFile(is);
+	os.close();
+
+	cout << endl << " data lida do ficheiro (em 'da'): " << bolas << endl;
+	bolas.showData();*/
+
+
 }
